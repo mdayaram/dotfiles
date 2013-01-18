@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+script_root=`readlink -f "${BASH_SOURCE[0]}"`
+dotfile_root=`dirname $script_root`
+dotfile_root=`dirname $dotfile_root`
+
+if [ `uname` == "Linux" ]; then
+	ln -sf $dotfile_root/bashrc $HOME/.bashrc
+elif [ `uname` == "Darwin" ]; then
+	ln -sf $dotfile_root/bashrc $HOME/.bash_profile
+fi
+
+ln -sf $dotfile_root/vim $HOME/.vim
+ln -sf $dotfile_root/vimrc $HOME/.vimrc
+ln -sf $dotfile_root/gitconfig $HOME/.gitconfig
+
+echo "donezo!"
