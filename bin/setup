@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-script_root=`readlink -f "${BASH_SOURCE[0]}"`
-dotfile_root=`dirname $script_root`
+dotfile_root="${BASH_SOURCE[0]}"
+if [ -z $dotfile_root ]; then
+	echo "Couldn't determine home dir of dotfiles"
+	exit 1
+fi
+dotfile_root=`dirname $dotfile_root`
 dotfile_root=`dirname $dotfile_root`
 
 if [ `uname` == "Linux" ]; then
