@@ -29,7 +29,7 @@ fi
 backup "$HOME/.vim"
 backup "$HOME/.vimrc"
 backup "$HOME/.gitconfig"
-ln -sf $dotfile_root/vim/ $HOME/.vim
+ln -sf $dotfile_root/vim $HOME/.vim
 ln -sf $dotfile_root/vimrc $HOME/.vimrc
 ln -sf $dotfile_root/gitconfig $HOME/.gitconfig
 
