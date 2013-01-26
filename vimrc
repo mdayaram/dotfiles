@@ -65,6 +65,7 @@ colorscheme ir_black
 set rtp+=/home/noj/.gvm/gos/go1.0.3/misc/vim
 set rtp+=/Users/noj/.gvm/gos/go1.0.3/misc/vim
 filetype plugin indent on
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 syntax on
 
 " Make tabs spaces for these guys cause they're special.
