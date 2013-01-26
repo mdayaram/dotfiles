@@ -6,7 +6,7 @@ Some of my dotfiles.
 ## Installation
 
 ```
-curl -s https://raw.github.com/mdayaram/dotfiles/master/bin/install | bash -s
+curl -s https://raw.github.com/mdayaram/dotfiles/master/bin/update | bash -s
 ```
 
 ## TODO:

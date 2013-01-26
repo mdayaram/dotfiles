@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+function backup {
+	[ ! -d "$dotfile_root/backups" ] && mkdir -p "$dotfile_root/backups"
+	if [ -n "$1" -a ! -h "$1" ]; then
+		echo "  Found existing $1 file, backing up to $dotfile_root/backups..."
+		mv "$1" "$dotfile_root/backups"
+	else
+		rm "$1"
+	fi
+}
+
 dotfile_root="${BASH_SOURCE[0]}"
 if [ -z $dotfile_root ]; then
 	echo "Couldn't determine home dir of dotfiles"
@@ -9,12 +19,17 @@ dotfile_root=`dirname $dotfile_root`
 dotfile_root=`dirname $dotfile_root`
 
 if [ `uname` == "Linux" ]; then
+	backup "$HOME/.bashrc"
 	ln -sf $dotfile_root/bashrc $HOME/.bashrc
 elif [ `uname` == "Darwin" ]; then
+	backup "$HOME/.bash_profile"
 	ln -sf $dotfile_root/bashrc $HOME/.bash_profile
 fi
 
-ln -sf $dotfile_root/vim $HOME/.vim
+backup "$HOME/.vim"
+backup "$HOME/.vimrc"
+backup "$HOME/.gitconfig"
+ln -sf $dotfile_root/vim/ $HOME/.vim
 ln -sf $dotfile_root/vimrc $HOME/.vimrc
 ln -sf $dotfile_root/gitconfig $HOME/.gitconfig
 
