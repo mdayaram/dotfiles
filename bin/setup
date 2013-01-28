@@ -36,7 +36,6 @@ ln -sf $dotfile_root/vimrc $HOME/.vimrc
 ln -sf $dotfile_root/gitconfig $HOME/.gitconfig
 
 # Needed for VIM
-mkdir -p ~/.vim/autoload
 mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/tmp/backup
 mkdir -p ~/.vim/tmp/undo
