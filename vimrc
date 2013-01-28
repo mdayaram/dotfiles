@@ -1,7 +1,26 @@
 set nocompatible
 
-" }}}
-" Basic options ----------------------------------------------------------- {{{
+" Vundle setup
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" My Bundles
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'wavded/vim-stylus'
+Bundle 'zaiste/vimified'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Lokaltog/powerline'
+Bundle 'tpope/vim-eunuch'
+Bundle 'scrooloose/nerdtree'
+
+
+" Basic options -------------------------
 set encoding=utf-8
 set modelines=0
 set autoindent
@@ -62,8 +81,7 @@ set background=dark
 colorscheme ir_black
 
 " Go related stuff.
-set rtp+=/home/noj/.gvm/gos/go1.0.3/misc/vim
-set rtp+=/Users/noj/.gvm/gos/go1.0.3/misc/vim
+set rtp+=~/.gvm/gos/go1.0.3/misc/vim
 filetype plugin indent on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 syntax on
