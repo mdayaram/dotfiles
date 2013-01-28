@@ -20,3 +20,5 @@
 	untracked = cyan
 [alias]
 	ls = log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph
+[push]
+	default = tracking
