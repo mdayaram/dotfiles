@@ -16,7 +16,9 @@ if [ -z $dotfile_root ]; then
 	exit 1
 fi
 dotfile_root=`dirname $dotfile_root`
+dotfile_root=$(cd $dotfile_root;pwd)
 dotfile_root=`dirname $dotfile_root`
+echo "Determined DOTFILE root: $dotfile_root"
 
 if [ `uname` == "Linux" ]; then
 	backup "$HOME/.bashrc"
