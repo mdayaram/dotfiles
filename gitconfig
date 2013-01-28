@@ -1,6 +1,8 @@
 [user]
 	name = Manoj Dayaram
 	email = noj@moovweb.com
+[core]
+	editor = vim
 [color]
 	ui = auto
 [color "branch"]
