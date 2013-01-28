@@ -73,31 +73,14 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     alias grep='grep -Hn --color=auto'
     alias fgrep='fgrep -Hn --color=auto'
     alias egrep='egrep -Hn --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -106,14 +89,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Start edits by noj
-
+# Rather complicated prompt, ignore the colors, looks like this:
+# (^.^) :gitbranch: /current/path $
+# The git branch only shows up if in a git directory.
+# The face at the beginning represents the exit code of the last command.
+#   (^.^) if exit status == 0
+#   (>.<) if exist status != 0
 export PS1="\`if [ \$? = 0 ]; then echo \[\e[33m\]'(^.^)'\[\e[0m\]; else echo \[\e[31m\]'(>.<)'\[\e[0m\]; fi\` \${debian_chroot:+(\$debian_chroot)}\[\e[0;34m\]:\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1 /'): \[\e[0;32m\]\$PWD\[\e[0;31m\] \\$\[\e[m\] "
-
 
 # Aliases for common commands
 alias vi='vim'
-alias ack='ack --all'
+alias ack='ack --all' # needed because ack doesn't yet support .go files.
 
 # RVM scripts
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
