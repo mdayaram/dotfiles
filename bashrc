@@ -121,6 +121,9 @@ alias ack='ack --all'
 # add scripts for gvm and go
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
+# add git autocompletion
+[[ -s "$HOME/.dotfiles/git-completion" ]] && source "$HOME/.dotfiles/git-completion"
+
 # Change GOPATH from gvm's default for now until gpkg makes use
 # of go 1s new package features.
 export MOOV_HOME=$HOME/dev/moovweb
