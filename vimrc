@@ -17,6 +17,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tdesikan/vim-tritium'
 
 
 " Basic options -------------------------

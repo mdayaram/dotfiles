@@ -51,7 +51,7 @@ else
 fi
 
 # Setup vundles for vim
-vim +BundleClean!
+vim +BundleClean! +qall
 vim +BundleInstall! +qall
 
 echo "donezo!"
