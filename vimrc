@@ -15,7 +15,6 @@ Bundle 'wavded/vim-stylus'
 Bundle 'zaiste/vimified'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/nerdtree'
 
