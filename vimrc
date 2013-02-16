@@ -8,15 +8,9 @@ Bundle 'gmarik/vundle'
 
 " My Bundles
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
-Bundle 'wavded/vim-stylus'
-Bundle 'zaiste/vimified'
 Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-eunuch'
-Bundle 'scrooloose/nerdtree'
 Bundle 'tdesikan/vim-tritium'
 
 
