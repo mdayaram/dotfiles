@@ -119,6 +119,7 @@ export PATH=$PATH:$HOME/bin/moovweb
 export PATH=$PATH:$HOME/dev/shell-utils/build
 
 clear
+echo "Hello $USER! And welcome to $(hostname)!"
 echo -ne "Uptime: "; uptime
 echo ""
 cal
