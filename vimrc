@@ -10,7 +10,7 @@ Bundle 'gmarik/vundle'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 Bundle 'tdesikan/vim-tritium'
 
 
@@ -75,7 +75,7 @@ set background=dark
 colorscheme ir_black
 
 " Go related stuff.
-set rtp+=~/.gvm/gos/go1.0.3/misc/vim
+set rtp+=$GOROOT/misc/vim
 filetype plugin indent on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 syntax on
