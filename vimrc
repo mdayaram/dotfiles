@@ -86,3 +86,4 @@ autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype erb setlocal ts=2 sw=2 expandtab
 autocmd Filetype scss setlocal ts=2 sw=2 expandtab
 autocmd Filetype vcl setlocal ts=2 sw=2 expandtab
+autocmd Filetype haml setlocal ts=2 sw=2 noexpandtab
