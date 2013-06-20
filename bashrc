@@ -101,6 +101,10 @@ export PS1="\`if [ \$? = 0 ]; then echo \[\e[33m\]'(^.^)'\[\e[0m\]; else echo \[
 alias vi='vim'
 alias ack='ack --all' # needed because ack doesn't yet support .go files.
 
+# Need to set these before we source rvm and gvm because they back up the path.
+export PATH=$PATH:$HOME/bin/moovweb
+export PATH=$PATH:$HOME/dev/shell-utils/build
+
 # RVM scripts
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -114,9 +118,6 @@ alias ack='ack --all' # needed because ack doesn't yet support .go files.
 # of go 1s new package features.
 export MOOV_HOME=$HOME/dev/moovweb
 export GOPATH=$MOOV_HOME
-
-export PATH=$PATH:$HOME/bin/moovweb
-export PATH=$PATH:$HOME/dev/shell-utils/build
 
 clear
 echo "Hello $USER! And welcome to $(hostname)!"
