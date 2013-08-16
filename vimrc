@@ -52,6 +52,14 @@ set title
 set number
 set noeol   " don't add an automatic new line at the end of file.
 
+" Show trailing whitespaces
+match ErrorMsg '\s\+$'
+function! TrimWhiteSpace()
+	%s/\s\+$//e
+endfunction
+" Automatically trim trailing whitespace on these files
+autocmd FileType c,h autocmd BufWritePre <buffer> :call TrimWhiteSpace()
+
 " Tabs, spaces, wrapping {{{
 
 set tabstop=2
@@ -87,3 +95,4 @@ autocmd Filetype erb setlocal ts=2 sw=2 expandtab
 autocmd Filetype scss setlocal ts=2 sw=2 expandtab
 autocmd Filetype vcl setlocal ts=2 sw=2 expandtab
 autocmd Filetype haml setlocal ts=2 sw=2 noexpandtab
+autocmd Filetype c,h setlocal ts=2 sw=2 expandtab

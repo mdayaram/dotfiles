@@ -104,6 +104,7 @@ alias ack='ack --all' # needed because ack doesn't yet support .go files.
 # Need to set these before we source rvm and gvm because they back up the path.
 export PATH=$PATH:$HOME/bin/moovweb
 export PATH=$PATH:$HOME/dev/shell-utils/build
+export PATH=$PATH:$HOME/dev/shell-utils/test
 
 # RVM scripts
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
