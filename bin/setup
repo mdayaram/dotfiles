@@ -37,6 +37,13 @@ ln -sf $dotfile_root/vimrc $HOME/.vimrc
 ln -sf $dotfile_root/gitconfig $HOME/.gitconfig
 ln -sf $dotfile_root/ackrc $HOME/.ackrc
 
+# .ssh/config file could have some crazy/complicated logic in there, only make
+# a link if it doesn't already exist.
+if [ ! -f "$HOME/.ssh/config" ]; then
+	mkdir -p $HOME/.ssh/sessions
+	ln -sf $dotfile_root/ssh/config $HOME/.ssh/config
+fi
+
 # Needed for VIM
 mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/tmp/backup

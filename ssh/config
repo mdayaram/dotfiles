@@ -1,0 +1,7 @@
+# Allows for ssh session reuse which should optimize speed on most ssh operations,
+# in particular, git related operations.  Reference article found below:
+# http://nerderati.com/2011/03/simplify-your-life-with-an-ssh-config-file/
+#
+ControlMaster auto
+ControlPath ~/.ssh/sessions/%r@%h:%p
+ControlPersist yes
