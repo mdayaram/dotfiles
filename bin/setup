@@ -31,9 +31,11 @@ fi
 backup "$HOME/.vim"
 backup "$HOME/.vimrc"
 backup "$HOME/.gitconfig"
+backup "$HOME/.ackrc"
 ln -sf $dotfile_root/vim $HOME/.vim
 ln -sf $dotfile_root/vimrc $HOME/.vimrc
 ln -sf $dotfile_root/gitconfig $HOME/.gitconfig
+ln -sf $dotfile_root/ackrc $HOME/.ackrc
 
 # Needed for VIM
 mkdir -p ~/.vim/bundle
