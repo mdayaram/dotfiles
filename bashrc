@@ -129,3 +129,6 @@ fortune | cowsay
 echo ""
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Use vi commands in bash terminal when you press ESC
+set -o vi
