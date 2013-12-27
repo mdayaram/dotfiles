@@ -93,3 +93,39 @@ autocmd FileType c,h,ruby,erb,python autocmd BufWritePre <buffer> :call TrimWhit
 " Make tabs spaces for these guys cause they're special.
 autocmd Filetype html,ruby,erb,scss,vcl,haml,c,h setlocal ts=2 sw=2 expandtab
 autocmd Filetype haml,python setlocal ts=2 sw=2 noexpandtab
+
+" Restore cursor position, window position, and last search after running a
+" command.
+function! Preserve(command)
+  " Save the last search.
+  let search = @/
+
+  " Save the current cursor position.
+  let cursor_position = getpos('.')
+
+  " Save the current window position.
+  normal! H
+  let window_position = getpos('.')
+  call setpos('.', cursor_position)
+
+  " Execute the command.
+  execute a:command
+
+  " Restore the last search.
+  let @/ = search
+
+  " Restore the previous window position.
+  call setpos('.', window_position)
+  normal! zt
+
+  " Restore the previous cursor position.
+  call setpos('.', cursor_position)
+endfunction
+
+" Re-indent the whole buffer.
+function! Indent()
+  call Preserve('normal gg=G')
+endfunction
+
+" Autoindent these guys upon save.
+autocmd FileType ruby,erb,python,scss,haml autocmd BufWritePre <buffer> :call Indent()
