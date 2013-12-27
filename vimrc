@@ -52,13 +52,6 @@ set title
 set number
 set noeol   " don't add an automatic new line at the end of file.
 
-" Show trailing whitespaces
-match ErrorMsg '\s\+$'
-function! TrimWhiteSpace()
-	%s/\s\+$//e
-endfunction
-" Automatically trim trailing whitespace on these files
-autocmd FileType c,h autocmd BufWritePre <buffer> :call TrimWhiteSpace()
 
 " Tabs, spaces, wrapping {{{
 
@@ -85,14 +78,18 @@ colorscheme ir_black
 " Go related stuff.
 set rtp+=$GOROOT/misc/vim
 filetype plugin indent on
+filetype indent on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 syntax on
 
+" Show trailing whitespaces
+match ErrorMsg '\s\+$'
+function! TrimWhiteSpace()
+	%s/\s\+$//e
+endfunction
+" Automatically trim trailing whitespace on these files
+autocmd FileType c,h,ruby,erb,python autocmd BufWritePre <buffer> :call TrimWhiteSpace()
+
 " Make tabs spaces for these guys cause they're special.
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-autocmd Filetype erb setlocal ts=2 sw=2 expandtab
-autocmd Filetype scss setlocal ts=2 sw=2 expandtab
-autocmd Filetype vcl setlocal ts=2 sw=2 expandtab
-autocmd Filetype haml setlocal ts=2 sw=2 noexpandtab
-autocmd Filetype c,h setlocal ts=2 sw=2 expandtab
+autocmd Filetype html,ruby,erb,scss,vcl,haml,c,h setlocal ts=2 sw=2 expandtab
+autocmd Filetype haml,python setlocal ts=2 sw=2 noexpandtab
