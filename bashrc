@@ -101,6 +101,7 @@ export PS1="\`if [ \$? = 0 ]; then echo \[\e[33m\]'(^.^)'\[\e[0m\]; else echo \[
 alias vi='vim'
 
 # Need to set these before we source rvm and gvm because they back up the path.
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/bin/moovweb
 export PATH=$PATH:$HOME/dev/shell-utils/build
 export PATH=$PATH:$HOME/dev/shell-utils/test
@@ -131,4 +132,4 @@ echo ""
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Use vi commands in bash terminal when you press ESC
-set -o vi
+#set -o vi
