@@ -98,7 +98,13 @@ fi
 export PS1="\`if [ \$? = 0 ]; then echo \[\e[33m\]'(^.^)'\[\e[0m\]; else echo \[\e[31m\]'(>.<)'\[\e[0m\]; fi\` \${debian_chroot:+(\$debian_chroot)}\[\e[0;34m\]:\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1 /'): \[\e[0;32m\]\$PWD\[\e[0;31m\] \\$\[\e[m\] "
 
 # Aliases for common commands
+
 alias vi='vim'
+alias sudo='sudo ' # allow aliases to work with sudo
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias bell="tput bel" # play system bell sound.
 
 # Need to set these before we source rvm and gvm because they back up the path.
 export PATH=$PATH:$HOME/bin
