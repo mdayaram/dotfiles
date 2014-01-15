@@ -104,7 +104,6 @@ alias sudo='sudo ' # allow aliases to work with sudo
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-alias bell="tput bel" # play system bell sound.
 
 # Need to set these before we source rvm and gvm because they back up the path.
 export PATH=$PATH:$HOME/bin
