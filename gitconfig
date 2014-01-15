@@ -19,7 +19,7 @@
 	changed = green
 	untracked = cyan
 [alias]
-	ls = log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph
+	ls = log --format='%Cgreen%h%C(yellow)%d %C(cyan)%an%Creset :: %s' --graph
 [push]
 	default = tracking
 [pull]
