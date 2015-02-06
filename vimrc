@@ -12,6 +12,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 "Bundle 'scrooloose/syntastic'
 Bundle 'tdesikan/vim-tritium'
+Bundle 'fatih/vim-go'
 
 
 " Basic options -------------------------
@@ -64,22 +65,19 @@ set textwidth=80
 set formatoptions=qrn1
 set colorcolumn=+1
 
-" Backups 
+" Backups
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup
 
-" Color scheme 
-set t_Co=256 
+" Color scheme
+set t_Co=256
 set background=dark
 colorscheme ir_black
 
-" Go related stuff.
-set rtp+=$GOROOT/misc/vim
 filetype plugin indent on
 filetype indent on
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 syntax on
 
 " Show trailing whitespaces
@@ -128,4 +126,4 @@ function! Indent()
 endfunction
 
 " Autoindent these guys upon save.
-autocmd FileType ruby,erb,python,scss,haml autocmd BufWritePre <buffer> :call Indent()
+autocmd FileType ruby,erb,python,scss autocmd BufWritePre <buffer> :call Indent()

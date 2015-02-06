@@ -108,13 +108,8 @@ alias bell="tput bel" # play system bell sound.
 
 # Need to set these before we source rvm and gvm because they back up the path.
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/bin/moovweb
-export PATH=$PATH:$HOME/dev/shell-utils/build
-export PATH=$PATH:$HOME/dev/shell-utils/test
-export PATH=$PATH:$HOME/dev/shell-utils/apollo
-
-# RVM scripts
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Need to put Git in front so that it overrides Xcode git
+export PATH=/usr/local/git/bin:$PATH
 
 # add scripts for gvm and go
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
@@ -122,10 +117,9 @@ export PATH=$PATH:$HOME/dev/shell-utils/apollo
 # add git autocompletion
 [[ -s "$HOME/.dotfiles/git-completion" ]] && source "$HOME/.dotfiles/git-completion"
 
-# Change GOPATH from gvm's default for now until gpkg makes use
-# of go 1s new package features.
-export MOOV_HOME=$HOME/dev/moovweb
-export GOPATH=$MOOV_HOME
+# RVM scripts
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 clear
 echo "Hello $USER! And welcome to $(hostname)!"
@@ -135,7 +129,3 @@ cal
 fortune | cowsay
 echo ""
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# Use vi commands in bash terminal when you press ESC
-#set -o vi
