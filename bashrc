@@ -110,6 +110,9 @@ export PATH=$PATH:$HOME/bin
 # Need to put Git in front so that it overrides Xcode git
 export PATH=/usr/local/git/bin:$PATH
 
+# add anything from the home bin directory
+[[ -s "$HOME/bin/env/bash_bin" ]] && source "$HOME/bin/env/bash_bin"
+
 # add scripts for gvm and go
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
