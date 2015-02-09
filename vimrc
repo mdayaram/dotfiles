@@ -1,10 +1,9 @@
-set nocompatible
-
 " Vundle setup
+set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'gmarik/Vundle.vim'
 
 " My Bundles
 Bundle 'vim-ruby/vim-ruby'
@@ -14,6 +13,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tdesikan/vim-tritium'
 Bundle 'fatih/vim-go'
 
+call vundle#end()
+filetype plugin indent on
 
 " Basic options -------------------------
 set encoding=utf-8
@@ -76,7 +77,6 @@ set t_Co=256
 set background=dark
 colorscheme ir_black
 
-filetype plugin indent on
 filetype indent on
 syntax on
 

@@ -51,16 +51,16 @@ mkdir -p ~/.vim/tmp/undo
 mkdir -p ~/.vim/tmp/swap
 
 # Install Vundle for vim
-if [ -d "$HOME/.vim/bundle/vundle" ]; then
-	cd "$HOME/.vim/bundle/vundle"
+if [ -d "$HOME/.vim/bundle/Vundle.vim" ]; then
+	cd "$HOME/.vim/bundle/Vundle.vim"
 	git pull
 	cd -
 else
-	git clone https://github.com/gmarik/vundle.git "$HOME/.vim/bundle/vundle"
+	git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
 fi
 
 # Setup vundles for vim
-vim +BundleClean! +qall
-vim +BundleInstall! +qall
+vim +PluginClean! +qall
+vim +PluginInstall! +qall
 
 echo "donezo!"
